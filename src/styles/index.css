@@ -1,12 +1,55 @@
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* 
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+h1 {
+    font-size: 75px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-*/
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 35px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    text-align: center;
+    color: #555;
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+span {
+    color: red;
+    font-size: 44px;
+}
+
+.pending {
+    font-size: 25px;
+    color: blue;
+}
