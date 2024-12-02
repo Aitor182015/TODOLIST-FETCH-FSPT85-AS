@@ -11,21 +11,19 @@ const Home = () => {
                 method: "POST",
             });
 
-            if (response.status === 404) {
-                console.warn("Usuario ya existe, no es necesario crearlo nuevamente.");
+            if (response.status === 400) {
+                console.log("Usuario ya existe, no es necesario crearlo nuevamente.");
                 return false;
             }
-
             if (!response.ok) {
-                console.error(`Error al crear el usuario: ${response.status}`);
+                console.log(`Error al crear el usuario: ${response.status}`);
                 return false;
             }
-
             let data = await response.json();
             console.log("Usuario creado exitosamente:", data);
             return true;
         } catch (error) {
-            console.error("Error de red o servidor:", error);
+            console.log("Error de red o servidor:", error);
             return false;
         }
     }
@@ -44,14 +42,14 @@ const Home = () => {
                 },
             });
             if (!response.ok) {
-                console.error(response.status);
+                console.log(response.status);
                 return;
             }
             let data = await response.json();
             console.log(data);
             console.log(`Tarea ${label} añadida a la lista.`);
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     }
 
@@ -62,14 +60,14 @@ const Home = () => {
                 method: "GET",
             });
             if (!response.ok) {
-                console.error(response.status);
+                console.log(response.status);
                 return;
             }
             let data = await response.json();
             console.log(data.todos);
             setToDoList(data.todos);
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     }
 
@@ -79,15 +77,13 @@ const Home = () => {
             let response = await fetch(`https://playground.4geeks.com/todo/todos/${todoId}`, {
                 method: "DELETE",
             });
-
             if (!response.ok) {
                 console.log(response.status);
                 return;
             }
-
             console.log(`Tarea con la ID ${todoId} eliminada`);
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     }
 
